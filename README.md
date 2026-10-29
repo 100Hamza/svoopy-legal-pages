@@ -5,35 +5,30 @@ A static, responsive GitHub Pages site containing:
 - `index.html` — legal-page landing page
 - `privacy-policy.html` — Privacy Policy
 - `terms-and-conditions.html` — Terms & Conditions
-- `assets/svoopy-mark.png` — cropped mark used in the header
+- `assets/svoopy-mark.png` — cropped Svoopy mark used in the header
 - `assets/svoopy-logo-full.png` — original supplied logo image
 
-The pages use embedded CSS, relative navigation, and no external libraries, fonts, scripts, or images.
+The pages use embedded CSS, relative navigation, and no external libraries, fonts, scripts, or image CDNs.
 
-## Before publishing
+## Remaining client details before publishing
 
-Replace every bracketed placeholder, including:
+Replace the remaining operator/contact placeholders in both policy pages and the landing page:
 
-- `[FULL LEGAL NAME OF COMPANY]`
-- `[COUNTRY]` and `[COUNTRY / GOVERNING LAW]`
+- `[LEGAL OPERATOR NAME]` (confirm whether the Play Console display name is also the legal operator name)
+- `[COUNTRY / JURISDICTION]` and `[COUNTRY / GOVERNING LAW]`
 - `[BUSINESS ADDRESS IF REQUIRED]`
-- `[DATE]` and `[YEAR]`
-- `[SUPPORT EMAIL]` / `[SUPPORT AND ACCOUNT-DELETION EMAIL]`
-- `[IN-APP ACCOUNT-DELETION REQUEST PATH]`
-- the account-deletion processing timeframe
-- wallet refunds, treatment of balances below €100, and replay-removal refund/credit rules
-- legal review placeholders for jurisdiction, liability, and disputes
+- `[SUPPORT AND ACCOUNT-DELETION EMAIL]` (one shared email)
 
-The email links currently point to `mailto:replace-support-email@example.invalid`. Replace the `href` in each email link with the client's real address, for example `href="mailto:help@yourdomain.com"`, and replace the visible placeholder text too. The `.invalid` address is intentionally non-functional.
+The email links currently point to `mailto:replace-support-email@example.invalid`. Replace every such `href` with the client’s actual email, for example `href="mailto:help@yourdomain.com"`, and replace the visible placeholder text. The `.invalid` address is intentionally non-functional.
 
-Confirm the descriptions match the production app and backend before publishing—especially public profile-location visibility, chat access, recording behavior, deletion steps, and payment rules. Remove the yellow draft-warning banners from the HTML pages after all placeholders and client-review items have been resolved.
+The policies reflect the supplied Svoopy behavior: the in-app support path is **Admin Chat Drawer → Help & Support → Customer Support → Chat Now**; account deletion is handled by an administrator and normally takes 7–14 working days after any eligible withdrawal/payment matter is resolved; failed or unconfirmed payments do not unlock replay access; and a replay with active paid access remains available to that purchaser until the access period ends. The account-deletion-under-€100 balance rule is intentionally not stated.
+
+Remove the yellow operator-details banners from the HTML pages once the remaining operator/contact placeholders have been filled. Confirm that the final copy matches the production app.
 
 ## GitHub Pages
 
-1. Upload the files in this folder to the root of a GitHub repository (or keep the folder and adjust the Pages source accordingly).
+1. Upload the files in this folder to the repository root, or put them in a `docs` folder and select that folder as the Pages source. Keep the `assets` folder alongside the HTML pages.
 2. In the repository, open **Settings → Pages** and configure deployment from the branch and folder containing `index.html` (commonly `main` and `/(root)`).
-3. After deployment, the pages will be available at paths similar to:
-   - `/privacy-policy.html`
-   - `/terms-and-conditions.html`
+3. After deployment, the pages will be available at paths similar to `/privacy-policy.html` and `/terms-and-conditions.html`.
 
 The links between pages are relative, so they work on a GitHub Pages project site as well as on a custom domain.
