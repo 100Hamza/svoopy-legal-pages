@@ -1,34 +1,37 @@
-# Svoopy legal pages
+# Svoopy legal pages and in-app text
 
-A static, responsive GitHub Pages site containing:
+This package contains the Svoopy legal website, copy-ready in-app policies, and the editable Manual Guide for the app’s Help page.
 
-- `index.html` — legal-page landing page
-- `privacy-policy.html` — Privacy Policy
-- `terms-and-conditions.html` — Terms & Conditions
-- `assets/svoopy-mark.png` — cropped Svoopy mark used in the header
-- `assets/svoopy-logo-full.png` — original supplied logo image
+## Included files
 
-The pages use embedded CSS, relative navigation, and no external libraries, fonts, scripts, or image CDNs.
+- `index.html` — legal landing page and company contact details
+- `privacy-policy.html` — web Privacy Policy
+- `terms-and-conditions.html` — web Terms & Conditions
+- `in-app-text/privacyPolicy.txt` — copy-ready in-app Privacy Policy
+- `in-app-text/termsAndConditions.txt` — copy-ready in-app Terms & Conditions
+- `in-app-text/manual-guide.txt` — editable Manual Guide content for the admin-managed Help page
+- `assets/` — Svoopy logo assets used by the website
 
-## Remaining client details before publishing
+## Company details used
 
-Replace the remaining operator/contact placeholders in both policy pages and the landing page:
+- Operator: Joy and Media Ltd
+- Registration jurisdiction and Terms governing law: England and Wales
+- Registered office: 71-75 Shelton Street, London WC2H 9JQ, United Kingdom
+- Support and account-deletion email: info@joyandmedia.com
 
-- `[LEGAL OPERATOR NAME]` (confirm whether the Play Console display name is also the legal operator name)
-- `[COUNTRY / JURISDICTION]` and `[COUNTRY / GOVERNING LAW]`
-- `[BUSINESS ADDRESS IF REQUIRED]`
-- `[SUPPORT AND ACCOUNT-DELETION EMAIL]` (one shared email)
+The company registration number was not supplied and has not been invented or inserted. UK company website disclosures generally require the company number as well as the registration jurisdiction and registered office; add it when available before public website publication.
 
-The email links currently point to `mailto:replace-support-email@example.invalid`. Replace every such `href` with the client’s actual email, for example `href="mailto:help@yourdomain.com"`, and replace the visible placeholder text. The `.invalid` address is intentionally non-functional.
+## Publishing the website
 
-The policies reflect the supplied Svoopy behavior: the in-app support path is **Admin Chat Drawer → Help & Support → Customer Support → Chat Now**; account deletion is handled by an administrator and normally takes 7–14 working days after any eligible withdrawal/payment matter is resolved; failed or unconfirmed payments do not unlock replay access; and a replay with active paid access remains available to that purchaser until the access period ends. The account-deletion-under-€100 balance rule is intentionally not stated.
+Upload the contents of this folder to the repository root (or a `docs` folder) and configure GitHub Pages to publish that folder. Keep the `assets` folder alongside the HTML files. The site uses embedded CSS and relative links, without external scripts, fonts, or image CDNs.
 
-Remove the yellow operator-details banners from the HTML pages once the remaining operator/contact placeholders have been filled. Confirm that the final copy matches the production app.
+## Updating in-app text
 
-## GitHub Pages
+Paste the policy files into the admin/Firestore fields used by the app:
 
-1. Upload the files in this folder to the repository root, or put them in a `docs` folder and select that folder as the Pages source. Keep the `assets` folder alongside the HTML pages.
-2. In the repository, open **Settings → Pages** and configure deployment from the branch and folder containing `index.html` (commonly `main` and `/(root)`).
-3. After deployment, the pages will be available at paths similar to `/privacy-policy.html` and `/terms-and-conditions.html`.
+- `in-app-text/privacyPolicy.txt` → collection `csTermsAndConditions`, field `privacyPolicy`
+- `in-app-text/termsAndConditions.txt` → collection `csTermsAndConditions`, field `termsAndConditions`
 
-The links between pages are relative, so they work on a GitHub Pages project site as well as on a custom domain.
+The Manual Guide is a separate editable content file for the admin-managed Help page. No content has been written to Firebase by this package; the files must be added through the app’s admin workflow.
+
+For clickable in-app email or web links, use a separate clickable text widget if needed; the existing `TranslatedText` implementation is unchanged.
